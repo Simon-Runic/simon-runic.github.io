@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Simon Rune Stender | System Designer Portfolio</title>
+  <meta name="description" content="Selected game and systems design work by Simon Rune Stender.">
+  <meta name="theme-color" content="#2f4054">
+  <link rel="canonical" href="https://portfolio.simonstender.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Simon Rune Stender Portfolio">
+  <meta property="og:title" content="Simon Rune Stender | System Designer Portfolio">
+  <meta property="og:description" content="Selected game and systems design work by Simon Rune Stender.">
+  <meta property="og:url" content="https://portfolio.simonstender.de/">
+  <meta property="og:image" content="https://portfolio.simonstender.de/assets/h3-preview.jpg">
+  <meta property="og:image:alt" content="Preview of Simon Rune Stender's systems design portfolio.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simon Rune Stender | System Designer Portfolio">
+  <meta name="twitter:description" content="Selected game and systems design work by Simon Rune Stender.">
+  <meta name="twitter:image" content="https://portfolio.simonstender.de/assets/h3-preview.jpg">
+
+  <style>
+    :root {
+      --ink: #20262e;
+      --muted: #626a73;
+      --navy: #2f4054;
+      --navy-deep: #243343;
+      --rust: #ad5439;
+      --rust-dark: #93462f;
+      --cream: #efebe1;
+      --paper: #fbfaf7;
+      --white: #ffffff;
+      --line: #d8d4cb;
+      --shadow: 0 18px 50px rgba(25, 31, 38, 0.10);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 8%, rgba(173, 84, 57, 0.08), transparent 30rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(47, 64, 84, 0.10);
+      background: rgba(251, 250, 247, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
+
+    .brand span {
+      color: var(--rust);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+      background: rgba(47, 64, 84, 0.07);
+    }
+
+    .hero {
+      padding: 88px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.65fr);
+      gap: 56px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--rust-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 34px;
+      height: 2px;
+      content: "";
+      background: var(--rust);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin-bottom: 24px;
+      font-size: clamp(3rem, 7vw, 6.35rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    h1 .accent {
+      color: var(--rust);
+    }
+
+    .lead {
+      max-width: 780px;
+      margin-bottom: 30px;
+      color: #47505a;
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      line-height: 1.6;
+    }
+
+    .hero-actions,
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 760;
+      font-size: 0.95rem;
+      transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: 0 8px 24px rgba(47, 64, 84, 0.18);
+    }
+
+    .button.primary:hover {
+      background: var(--navy-deep);
+    }
+
+    .button.secondary {
+      border-color: #c9c5bc;
+      background: rgba(255, 255, 255, 0.66);
+    }
+
+    .button.secondary:hover {
+      border-color: #aaa59c;
+      background: var(--white);
+    }
+
+    .hero-aside {
+      border-top: 3px solid var(--rust);
+      padding-top: 22px;
+    }
+
+    .aside-label {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .hero-aside strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    .hero-aside p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section.dark {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .dark .section-heading p {
+      color: #cbd3db;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 100%;
+      border: 1px solid rgba(32, 38, 46, 0.10);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .project-image {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(32, 38, 46, 0.08);
+      background: #e8e4dc;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 350ms ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.025);
+    }
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 25px;
+    }
+
+    .project-type {
+      margin-bottom: 10px;
+      color: var(--rust-dark);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .project-body h3 {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .project-body p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 6px 9px;
+      border-radius: 7px;
+      color: #4d555d;
+      background: #f1efe9;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .project-body .card-actions {
+      margin-top: auto;
+    }
+
+    .project-body .button {
+      min-height: 42px;
+      width: 100%;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      min-height: 172px;
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .skill-num {
+      display: block;
+      margin-bottom: 22px;
+      color: #d98468;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.10em;
+    }
+
+    .skill h3 {
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
+
+    .skill p {
+      margin-bottom: 0;
+      color: #cbd3db;
+      font-size: 0.94rem;
+    }
+
+    .cv-panel {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .cv-copy {
+      padding: clamp(34px, 6vw, 68px);
+      background: var(--cream);
+    }
+
+    .cv-copy h2 {
+      margin-bottom: 17px;
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .cv-copy p {
+      max-width: 660px;
+      margin-bottom: 26px;
+      color: #555d65;
+      font-size: 1.03rem;
+    }
+
+    .cv-mark {
+      display: grid;
+      place-items: center;
+      min-height: 290px;
+      padding: 36px;
+      color: var(--white);
+      background: var(--rust);
+      text-align: center;
+    }
+
+    .cv-mark strong {
+      display: block;
+      font-size: clamp(4rem, 9vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+    }
+
+    .cv-mark span {
+      display: block;
+      margin-top: 14px;
+      font-weight: 750;
+      opacity: 0.9;
+    }
+
+    .contact {
+      padding: 58px 0 70px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact p {
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 30px;
+      color: #777c82;
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(173, 84, 57, 0.38);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cv-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        max-width: 520px;
+      }
+
+      .project-card {
+        grid-column: span 12;
+      }
+
+      .project-card {
+        display: grid;
+        grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.15fr);
+      }
+
+      .project-image {
+        height: 100%;
+        min-height: 330px;
+        aspect-ratio: auto;
+        border-right: 1px solid rgba(32, 38, 46, 0.08);
+        border-bottom: 0;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .site-header {
+        position: static;
+      }
+
+      .nav {
+        min-height: 64px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 0 10px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+        padding: 8px 10px;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding: 62px 0 55px;
+      }
+
+      .hero-grid {
+        gap: 36px;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 15vw, 4.3rem);
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      .project-card {
+        display: flex;
+      }
+
+      .project-image {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        border-right: 0;
+        border-bottom: 1px solid rgba(32, 38, 46, 0.08);
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-copy {
+        padding: 34px 25px;
+      }
+
+      .cv-mark {
+        min-height: 210px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Back to top">Simon <span>Stender</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Case Studies</a>
+        <a href="#skills">Focus</a>
+        <a href="cv/">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Game &amp; Systems Design Portfolio</div>
+          <h1>Simon Rune Stender<span class="accent">.</span></h1>
+          <p class="lead">
+            Game and Systems Designer with 6 years of professional experience designing interconnected systems, progression, balancing and live content for large-scale simulation games. My work focuses on clear rules, meaningful player decisions and systems that remain understandable as their complexity grows.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View selected work</a>
+            <a class="button secondary" href="cv/">View CV</a>
+          <a class="button secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Portfolio overview">
+          <div class="aside-label">Design focus</div>
+          <strong>Systems Design<br>Progression &amp; Balancing</strong>
+          <p>Selected work spanning RPG mechanics, technical systems, simulation design and long-term iteration.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Selected case studies</h2>
+          <p>Examples of systems design across tabletop and shipped digital projects, with an emphasis on design reasoning, iteration and collaboration.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/drain-preview.jpg" alt="Preview of the Ability Drain System case study showing balancing charts" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-type">RPG Systems Design</div>
+              <h3>The Ability Drain System</h3>
+              <p>A custom tabletop RPG resource and risk system built around the tension between power, flexibility and consequence. Developed and refined through long-term campaign playtesting.</p>
+              <ul class="tag-list" aria-label="Topics">
+                <li>Balancing</li>
+                <li>Probability</li>
+                <li>Player Agency</li>
+                <li>Playtesting</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button primary" href="files/Case-Study-Ability-Drain-System.pdf" target="_blank" rel="noopener">Open case study</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/h3-preview.jpg" alt="Preview of the H3 Hex Map case study showing OpenStreetMap data and generated hex classifications" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-type">Technical Systems Design</div>
+              <h3>H3 Hex Map</h3>
+              <p>A global building-placement system that translates OpenStreetMap data into gameplay-relevant H3 tile classifications through research, weighted rules, testing and close engineering collaboration.</p>
+              <ul class="tag-list" aria-label="Topics">
+                <li>H3</li>
+                <li>OpenStreetMap</li>
+                <li>Classification</li>
+                <li>Technical Design</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button primary" href="files/Case-Study-H3-Hex-Map.pdf" target="_blank" rel="noopener">Open case study</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/care-preview.jpg" alt="Preview of the Mission Chief Care System case study" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-type">Production Systems Design</div>
+              <h3>The Care System / SEG-V</h3>
+              <p>A dynamic support system based on real-world emergency care units. It converts changing conditions at an operation into scalable personnel, vehicle and equipment requirements.</p>
+              <ul class="tag-list" aria-label="Topics">
+                <li>Simulation</li>
+                <li>Dynamic Requirements</li>
+                <li>Research</li>
+                <li>Live Production</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button primary" href="files/Case-Study-Care-System.pdf" target="_blank" rel="noopener">Open case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="skills">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Design focus</h2>
+          <p>My work often sits between player-facing design and technical implementation, with particular emphasis on systems that need to remain legible, tunable and extensible.</p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill">
+            <span class="skill-num">01</span>
+            <h3>Systems & Feature Ownership</h3>
+            <p>From concept and constraints through documentation, implementation support, testing and live iteration.</p>
+          </article>
+          <article class="skill">
+            <span class="skill-num">02</span>
+            <h3>Progression & Balancing</h3>
+            <p>Structuring costs, pacing, incentives and probability so choices stay meaningful across progression.</p>
+          </article>
+          <article class="skill">
+            <span class="skill-num">03</span>
+            <h3>Player-Driven Systems</h3>
+            <p>Designing mechanics that create choices, consequences and emergent outcomes rather than fixed solutions.</p>
+          </article>
+          <article class="skill">
+            <span class="skill-num">04</span>
+            <h3>Technical Collaboration</h3>
+            <p>Strong technical understanding, code literacy and experience defining systems together with client and server developers.</p>
+          </article>
+          <article class="skill">
+            <span class="skill-num">05</span>
+            <h3>Live Iteration</h3>
+            <p>Using player behavior, feedback and production constraints to refine shipped systems over time.</p>
+          </article>
+          <article class="skill">
+            <span class="skill-num">06</span>
+            <h3>TTRPG Design</h3>
+            <p>More than a decade of Game Master experience, including original mechanics, reactive worlds and long-form narrative systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+      <div class="shell">
+        <h2>Contact</h2>
+        <p>For professional inquiries, you can reach me by email or LinkedIn.</p>
+        <div class="contact-links">
+          <a class="button primary" href="mailto:SimonR.Stender@gmail.com">SimonR.Stender@gmail.com</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/simon-s-680385199" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">Simon Rune Stender · Game &amp; Systems Designer</div>
+  </footer>
+</body>
+</html>
